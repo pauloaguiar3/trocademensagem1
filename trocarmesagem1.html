@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem Rotativa</title>
+    <style>
+        /* SEU CÓDIGO CSS AQUI */
+        /* Copie e cole todo o conteúdo da tag <style> do Canvas */
+        /* ... */
+        @keyframes bordaNeon {
+          0% {
+            border-color: #00FFFF;
+            box-shadow: 0 0 10px #00FFFF;
+          }
+          50% {
+            border-color: #FF00FF;
+            box-shadow: 0 0 15px #FF00FF;
+          }
+          100% {
+            border-color: #00FF00;
+            box-shadow: 0 0 20px #00FF00;
+          }
+        }
+
+        #mensagemEstatica {
+          padding: 10px;
+          border: 3px solid #00FFFF;
+          border-radius: 10px;
+          animation: bordaNeon 1.5s infinite alternate;
+          box-shadow: 0 0 5px #00FFFF;
+          max-width: 90%;
+          margin: auto;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+        }
+
+        #mensagemRotativa {
+          font-size: 18px;
+          font-weight: bold;
+          text-shadow: 1px 1px 2px #aaa;
+          text-decoration: none;
+          color: #4F4F4F;
+          display: inline-block;
+          transition: color 0.5s ease;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+        }
+
+        @media (max-width: 600px) {
+          #mensagemRotativa {
+            font-size: 15px;
+            padding: 0 5px;
+          }
+          #mensagemEstatica {
+            padding: 8px;
+          }
+        }
+    </style>
+</head>
+<body>
+    <!-- SEU CÓDIGO HTML AQUI -->
+    <!-- Copie e cole todo o conteúdo da tag <div> do Canvas -->
+    <div id="mensagemEstatica">
+      <a id="mensagemRotativa" href="#" target="_blank">
+        Use os links do site, apoie o projeto e receba nosso suporte gratuito!
+      </a>
+    </div>
+
+    <script>
+        // SEU CÓDIGO JAVASCRIPT AQUI
+        // Copie e cole todo o conteúdo da tag <script> do Canvas
+        // ...
+        const mensagens = [
+          {
+            texto: "🚀 Apoie o site e receba suporte grátis — clique aqui!",
+            cor: "#4F4F4F",
+            link: "https://sites.google.com/view/criptos-moedas-gratis/início"
+          },
+          {
+            texto: "💸 Ganhe criptomoedas com cliques pagos — é fácil e rápido!",
+            cor: "#228B22",
+            link: "https://sites.google.com/view/criptos-moedas-gratis/trabalhos/clique-pagos"
+          },
+          {
+            texto: "🤖 49 AirDrops e Bots no Telegram — participe agora!",
+            cor: "#1E90FF",
+            link: "https://sites.google.com/view/criptos-moedas-gratis/"
+          },
+          {
+            texto: "⛏️ Minere online com os melhores sites da web!",
+            cor: "#FF8C00",
+            link: "https://sites.google.com/view/criptos-moedas-gratis/trabalhos/minerar"
+          },
+          {
+            texto: "🚿 Faucets rápidas e simples? Acesse as Speedy Faucets!",
+            cor: "#FF8C00",
+            link: "https://sites.google.com/view/criptos-moedas-gratis/trabalhos/torneiras/speedy-faucets"
+          },
+          {
+            texto: "💼 Abra sua carteira: FaucetPay, Binance, bitBank e mais!",
+            cor: "#FF8C00",
+            link: "https://sites.google.com/view/criptos-moedas-gratis/carteiras"
+          },
+          {
+            texto: "🎬 Vídeos motivacionais de projetos? Veja nossa galeria!",
+            cor: "#FF8C00",
+            link: "https://sites.google.com/view/criptos-moedas-gratis/galeria"
+          },
+          {
+            texto: "📚 Baixe E-Books gratuitos com dicas e aprendizados top!",
+            cor: "#FF8C00",
+            link: "https://sites.google.com/view/criptos-moedas-gratis/ebooks"
+          },
+          {
+            texto: "🌐 Ganhe com a rede social Odysse — entrou, ganhou!",
+            cor: "#FF8C00",
+            link: "https://odysee.com/$/invite/@pauloaguiar3:e"
+          },
+          {
+            texto: "📱 X.me: APP social que gera renda no seu bolso!",
+            cor: "#FF8C00",
+            link: "https://h5.x.me/invite?code=7EM83H&user=pauloaguiar3&contentType=A&language=pt-PT"
+          },
+          {
+            texto: "🎉 Ganhe com vídeos no Kwai — renda extra direto no app!",
+            cor: "#FF8C00",
+            link: "https://k.kwai.com/w/tvxLhZdm"
+          }
+        ];
+
+        let indice = 0;
+        const elemento = document.getElementById("mensagemRotativa");
+
+        setInterval(() => {
+          indice = (indice + 1) % mensagens.length;
+          elemento.innerHTML = mensagens[indice].texto;
+          elemento.style.color = mensagens[indice].cor;
+          elemento.href = mensagens[indice].link;
+        }, 4000);
+    </script>
+</body>
+</html>
